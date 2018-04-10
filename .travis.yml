@@ -14,7 +14,7 @@ language: node_js
 
  deploy:
    provider: script
-   script: netlify deploy -s "f7077865-e8f2-4086-a3c8-d77ef6bccdfc" -t "62f19aecda8b8a938d7f70e45853019d6d744a5fa83cadeb5415025349713719" -p ./build
+   script: netlify deploy -s "f7077865-e8f2-4086-a3c8-d77ef6bccdfc" -t "f4cfb60e7260c85655bef79a95409aea18c90ec2130f0e269a11f6669718732c" -p ./build
    skip_cleanup: true
    on:
      branch: master
