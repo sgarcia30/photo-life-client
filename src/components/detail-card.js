@@ -1,9 +1,23 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-export default function DetailCard() {
+function DetailCard(props) {
+  console.log(props)
+    const cards = props.card.map((card, index) => (
+      <div key={index} className="card">
+        <h2>{card.title}</h2>
+        <p>{card.cardInfo}</p>
+      </div>
+    ))
     return (
         <div className="appDetails">
-          "Card with info on app"
+          {cards}
         </div>
     );
-}
+};
+
+const mapStateToProps = state => ({
+  card: state.card
+});
+
+export default connect(mapStateToProps)(DetailCard);

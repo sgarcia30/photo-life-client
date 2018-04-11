@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function PhotoLifeInfo() {
+export default function PhotoLifeInfo(props) {
     return (
         <div className="appIntro">
-          "Logo and such"
+          <h1>PhtoLife</h1>
         </div>
     );
 }

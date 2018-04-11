@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Main from './main.js';
-import {createStore} from 'redux';
+import Main from './components/main.js';
+import store from './store';
 import {Provider} from 'react-redux';
 import registerServiceWorker from './registerServiceWorker';
 

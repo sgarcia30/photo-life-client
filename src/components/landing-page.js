@@ -8,8 +8,6 @@ export default function LandingPage() {
         <div className="landingPage">
           <PhotoLifeInfo />
           <DetailCard />
-          <DetailCard />
-          <DetailCard />
           <Registration />
         </div>
     );
