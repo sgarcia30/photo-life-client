@@ -1,16 +1,33 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { register } from '../actions/authActions.js';
 
-export default function Registration() {
+export class Registration extends React.Component {
+  onSubmit(event) {
+    event.preventDefault();
+    const firstName = event.target.firstName.value;
+    const lastName = event.target.lastName.value;
+    const email = event.target.username.value;
+    const password = event.target.password.value;
+    const values = {
+      firstName,
+      lastName,
+      email,
+      password
+    }
+    this.props.dispatch(register(values));
+  }
+  render() {
     return (
         <div className="registration">
-          <form className='registration-form'>
+          <form className='registration-form' onSubmit={event => this.onSubmit(event)}>
             <div>
-              <label forhtml="first-name">First name</label>
-              <input placeholder='First Name' type="text" name='first-name' id='first-name' />
+              <label forhtml="first-name">First Name</label>
+              <input placeholder='First Name' type="text" name='firstName' id='firstName' />
             </div>
             <div>
-              <label forhtml="last-name">Last name</label>
-              <input type="text" name='last-name' id='last-name' placeholder='Last Name' />
+              <label forhtml="lastName">Last Name</label>
+              <input type="text" name='lastName' id='lastName' placeholder='Last Name' />
             </div>
             <div>
               <label forhtml="username">Email</label>
@@ -20,8 +37,11 @@ export default function Registration() {
               <label forhtml="password">Password</label>
               <input type="password" name='password' id='password' />
             </div>
-            <button type='submit'>Sign Up</button>
+            <button type='submit'>Register</button>
         </form>
         </div>
     );
+  }
 }
+
+export default connect()(Registration);

@@ -1,14 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { getEntries } from '../actions/entryActions.js';
 
-function Feed(props) {
-  const entries = props.entry.map((entry, index) => {
-    return (
-      <li key={index} className="entry">
-        <img src="{entry.photo}" alt="entry"/>
-        <p>{entry.caption}</p>
-      </li>
-  )})
+export class Feed extends React.Component {
+  componentDidMount() {
+    this.props.dispatch(getEntries())
+  }
+
+  render() {
+    const entries = this.props.entry.map((entry, index) => {
+      return (
+        <li key={index} className="entry">
+          <img src="{entry.photo}" alt="entry"/>
+          <p>{entry.caption}</p>
+        </li>
+    )})
     return (
         <div className="feed">
           <ul>
@@ -16,6 +22,7 @@ function Feed(props) {
           </ul>
         </div>
     );
+  }
 }
 
 const mapStateToProps = state => ({

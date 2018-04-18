@@ -1,3 +1,5 @@
+import * as actions from '../actions/entryActions.js';
+
 const initialState = {
   email: "jdoe@gmail.com",
   firstName: 'Jane',
@@ -21,5 +23,10 @@ const initialState = {
 };
 
 export const Reducer = (state = initialState, action) => {
+  if (action.type === actions.GET_PHOTO_SUCCESS) {
+    return Object.assign({}, state, {
+      entry: action.entries
+    })
+  }
   return state;
 }
