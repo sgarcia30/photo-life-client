@@ -1,19 +1,14 @@
 import {API_BASE_URL} from '../config';
 
-export const postEntry = (values) => dispatch => {
+export const postEntry = (photo) => dispatch => {
   const authToken = localStorage.getItem('authToken');
   const userId = localStorage.getItem('userId');
-    fetch(`${API_BASE_URL}/api/entries`, {
+    fetch(`${API_BASE_URL}/api/entries/${userId}`, {
       method: 'POST',
       headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
         Authorization: `Bearer ${authToken}`
       },
-      body: JSON.stringify({
-        caption: values.caption,
-        userId
-      })
+      body: photo
     })
         .then(res => {
             if (!res.ok) {
