@@ -8,7 +8,7 @@ export class AddEntry extends React.Component {
     event.preventDefault();
     let photo = new FormData();
     photo.append('file', event.target.photo.files[0]);
-    photo.append('filecaption', event.target.caption.value);
+    // photo.append('filecaption', event.target.caption.value);
     this.props.dispatch(postEntry(photo));
   }
 

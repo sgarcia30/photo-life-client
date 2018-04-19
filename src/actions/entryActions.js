@@ -3,6 +3,7 @@ import {API_BASE_URL} from '../config';
 export const postEntry = (photo) => dispatch => {
   const authToken = localStorage.getItem('authToken');
   const userId = localStorage.getItem('userId');
+  console.log(photo)
     fetch(`${API_BASE_URL}/api/entries/${userId}`, {
       method: 'POST',
       headers: {
