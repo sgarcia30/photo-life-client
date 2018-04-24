@@ -24,8 +24,29 @@ const initialState = {
 
 export const Reducer = (state = initialState, action) => {
   if (action.type === actions.GET_PHOTO_SUCCESS) {
+    const sortedEntries = action.entries.sort((a,b) => {
+    if(a.date < b.date) {
+      return 1
+    }
+    if(a.date > b.date) {
+      return -1
+    }
+      return 0
+    })
     return Object.assign({}, state, {
-      entry: action.entries
+      entry: sortedEntries
+    })
+  }
+  else if (action.type === action.EDIT_ENTRY) {
+    console.log('are we getting into the edit reducer?')
+    const edittedEntries = action.entries.map(entry => {
+      if(entry._id === action.entryId) {
+        entry.editable = true
+      }
+      console.log(edittedEntries);
+      return Object.assign({}, state, {
+        entry: edittedEntries
+      })
     })
   }
   return state;
