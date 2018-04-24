@@ -13,18 +13,16 @@ export class Feed extends React.Component {
 
   render() {
     const entries = this.props.entry.map((entry, index) => {
-      const entryId = entry._id;
-      console.log(entryId)
       return (
         <li key={index} className="entry">
           <img src={`${API_BASE_URL}${entry.photo}`} alt="entry"/>
           <p>{entry.caption}</p>
           <p>{entry.date}</p>
           <button onClick={() => {
-            console.log('edit clicker');
-            this.props.dispatch(editEntry(entryId))
+            console.log(entry._id);
+            this.props.dispatch(editEntry(entry._id))
           }}>Edit</button>
-          <button onClick={() => this.onClick(entryId)}>Delete</button>
+          <button onClick={() => this.onClick(entry._id)}>Delete</button>
         </li>
     )})
     return (
