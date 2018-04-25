@@ -40,10 +40,9 @@ export const Reducer = (state = initialState, action) => {
   else if (action.type === actions.EDIT_ENTRY) {
     const editedEntries = state.entry.map(entry => {
       if(entry._id === action.entryId) {
-        // please explain this... I'm lost
         return {
           ...entry,
-          editable: true
+          editable: !entry.editable
         }
       }
       return {

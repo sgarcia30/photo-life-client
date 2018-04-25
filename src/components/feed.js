@@ -23,16 +23,20 @@ export class Feed extends React.Component {
           <img src={`${API_BASE_URL}${entry.photo}`} alt="entry"/>
           <p>{entry.caption}</p>
           <p>{entry.date}</p>
-          <form id="edit-form" onSubmit={(event) => this.onSubmit(event, entry._id)}>
-            <div className="form-section">
-              <label forhtml="editCaption">Caption</label>
-              <textarea name="editCaption" rows="2"></textarea>
-            </div>
-            <button type="submit">Update</button>
-          </form>
+          {
+            entry.editable ?
+            <form id="edit-form" onSubmit={(event) => this.onSubmit(event, entry._id)}>
+              <div className="form-section">
+                <label forhtml="editCaption">Caption</label>
+                <textarea name="editCaption" rows="2"></textarea>
+              </div>
+              <button type="submit">Update</button>
+            </form>
+            : ''
+          }
           <button onClick={() => {
             this.props.dispatch(editEntry(entry._id))
-          }}>Edit</button>
+          }}>{entry.editable ? "Cancel" : "Edit"}</button>
           <button onClick={() => this.onClick(entry._id)}>Delete</button>
         </li>
     )})
