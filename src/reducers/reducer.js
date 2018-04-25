@@ -37,16 +37,21 @@ export const Reducer = (state = initialState, action) => {
       entry: sortedEntries
     })
   }
-  else if (action.type === action.EDIT_ENTRY) {
-    console.log('are we getting into the edit reducer?')
-    const edittedEntries = action.entries.map(entry => {
+  else if (action.type === actions.EDIT_ENTRY) {
+    const editedEntries = state.entry.map(entry => {
       if(entry._id === action.entryId) {
-        entry.editable = true
+        // please explain this... I'm lost
+        return {
+          ...entry,
+          editable: true
+        }
       }
-      console.log(edittedEntries);
-      return Object.assign({}, state, {
-        entry: edittedEntries
-      })
+      return {
+        ...entry
+      }
+    })
+    return Object.assign({}, state, {
+      entry: editedEntries
     })
   }
   return state;

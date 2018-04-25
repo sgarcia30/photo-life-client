@@ -27,7 +27,7 @@ export class AddEntry extends React.Component {
               <textarea name="caption" rows="2"></textarea>
             </div>
             <button type="submit">Post</button>
-        </form>
+          </form>
         </div>
     );
   }
