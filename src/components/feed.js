@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getEntries, deleteEntry, editEntry, editCaption } from '../actions/entryActions.js';
 import {API_BASE_URL} from '../config.js';
+import moment from 'moment';
 
 export class Feed extends React.Component {
   componentDidMount() {
@@ -17,12 +18,12 @@ export class Feed extends React.Component {
   }
 
   render() {
-    const entries = this.props.entry.map((entry, index) => {
+    const allEntries = this.props.entries.map((entry, index) => {
       return (
         <li key={index} className="entry">
           <img src={`${API_BASE_URL}${entry.photo}`} alt="entry"/>
           <p>{entry.caption}</p>
-          <p>{entry.date}</p>
+          <p>{moment(new Date(entry.date)).format('dddd MMM DD YYYY')}</p>
           {
             entry.editable ?
             <form id="edit-form" onSubmit={(event) => this.onSubmit(event, entry._id)}>
@@ -43,7 +44,7 @@ export class Feed extends React.Component {
     return (
         <div className="feed">
           <ul>
-            {entries}
+            {allEntries}
           </ul>
         </div>
     );
@@ -51,7 +52,7 @@ export class Feed extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  entry: state.entry,
+  entries: state.entries,
 });
 
 export default connect(mapStateToProps)(Feed);

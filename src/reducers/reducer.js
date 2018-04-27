@@ -4,7 +4,7 @@ const initialState = {
   email: "jdoe@gmail.com",
   firstName: 'Jane',
   lastName: 'Doe',
-  entry: [{
+  entries: [{
     img: "img-link",
     caption: "this photo is awesome"
   }],
@@ -34,11 +34,11 @@ export const Reducer = (state = initialState, action) => {
       return 0
     })
     return Object.assign({}, state, {
-      entry: sortedEntries
+      entries: sortedEntries
     })
   }
   else if (action.type === actions.EDIT_ENTRY) {
-    const editedEntries = state.entry.map(entry => {
+    const editedEntries = state.entries.map(entry => {
       if(entry._id === action.entryId) {
         return {
           ...entry,
@@ -50,8 +50,21 @@ export const Reducer = (state = initialState, action) => {
       }
     })
     return Object.assign({}, state, {
-      entry: editedEntries
+      entries: editedEntries
+    })
+  }
+  else if (action.type === actions.SEARCH_POSTS) {
+    const searchVal = action.searchVal.toLowerCase();
+    let searchMatches = state.entries.filter(entry => {
+      let lowCaseCaption = entry.caption.toLowerCase();
+      return lowCaseCaption.includes(searchVal);
+    })
+    return Object.assign({}, state, {
+      entries: searchMatches
     })
   }
   return state;
 }
+
+// const searchLength = searchVal.length;
+// let shortCaption = lowCaseCaption.substring(0, Math.min(lowCaseCaption.length, searchLength));

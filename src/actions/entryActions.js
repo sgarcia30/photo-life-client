@@ -1,5 +1,23 @@
 import {API_BASE_URL} from '../config';
 
+export const GET_PHOTO_SUCCESS = 'GET_PHOTO_SUCCESS';
+export const getPhotoSuccess = entries => ({
+    type: GET_PHOTO_SUCCESS,
+    entries
+});
+
+export const EDIT_ENTRY = 'EDIT_ENTRY';
+export const editEntry = entryId => ({
+    type: EDIT_ENTRY,
+    entryId
+});
+
+export const SEARCH_POSTS = 'SEARCH_POSTS';
+export const searchPosts = searchVal => ({
+    type: SEARCH_POSTS,
+    searchVal
+});
+
 export const postEntry = (photo, caption) => dispatch => {
   const authToken = localStorage.getItem('authToken');
   const userId = localStorage.getItem('userId');
@@ -45,18 +63,6 @@ export const editCaption = (updatedCaption, postId) => dispatch => {
           dispatch(getPhotoSuccess(response.entries));
         });
 };
-
-export const GET_PHOTO_SUCCESS = 'GET_PHOTO_SUCCESS';
-export const getPhotoSuccess = entries => ({
-    type: GET_PHOTO_SUCCESS,
-    entries
-});
-
-export const EDIT_ENTRY = 'EDIT_ENTRY';
-export const editEntry = entryId => ({
-    type: EDIT_ENTRY,
-    entryId
-});
 
 export const getEntries = () => dispatch => {
   const authToken = localStorage.getItem('authToken');
