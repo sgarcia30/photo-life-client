@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { postEntry } from '../actions/entryActions.js';
 import FormData from 'form-data';
+import './add-entry.css';
 
 export class AddEntry extends React.Component {
   onSubmit(event) {
@@ -20,13 +21,13 @@ export class AddEntry extends React.Component {
           <form id="entry-form" onSubmit={(event) => this.onSubmit(event)}>
             <div className="form-section">
               <label forhtml="photo">Upload Photo</label>
-              <input type="file" name="photo" required />
+              <input id='file-upload' type="file" name="photo" required />
             </div>
             <div className="form-section">
               <label forhtml="caption">Caption</label>
               <textarea name="caption" rows="2"></textarea>
             </div>
-            <button type="submit">Post</button>
+            <button id='submit' type="submit">Post</button>
           </form>
         </div>
     );

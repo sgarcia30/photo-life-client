@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { searchPosts, getEntries } from '../actions/entryActions.js';
+import './nav-bar-home.css';
 
 export class NavbarHome extends React.Component {
   onChange() {
@@ -15,8 +16,8 @@ export class NavbarHome extends React.Component {
     return (
         <div className="nav">
           <nav>
-            <h2>PhotoLife Logo</h2>
-            <ul>
+            <h2>Logo PhotoLife</h2>
+            <ul className="nav-components">
               <form id="searchForm">
                 <li><input type='text' placeholder='Search Entries' ref={input => this.input = input} onChange={() => this.onChange()}/></li>
               </form>
@@ -24,7 +25,7 @@ export class NavbarHome extends React.Component {
                 localStorage.clear();
                 window.location = '/login';
               }}>
-              <button>Logout</button></li>
+              <button id='logout'>Logout</button></li>
             </ul>
           </nav>
         </div>

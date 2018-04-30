@@ -2,6 +2,7 @@ import React from 'react';
 import AddEntry from './add-entry.js';
 import Feed from './feed.js';
 import NavbarHome from './nav-bar-home.js'
+import './home-page.css';
 
 export default function HomePage() {
     return (
