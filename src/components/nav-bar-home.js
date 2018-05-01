@@ -16,7 +16,7 @@ export class NavbarHome extends React.Component {
     return (
         <div className="nav">
           <nav>
-            <img src="../images/logo-camera.png" width="50" height="50" alt="camera logo"></img>
+            <img className='logo' src="/logo-camera-green-blue.png" alt="camera logo"></img>
             <h2>PhotoLife</h2>
             <ul className="nav-components">
               <form id="searchForm">

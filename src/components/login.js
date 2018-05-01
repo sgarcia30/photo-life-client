@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { login } from '../actions/authActions.js';
+import './login.css';
 
 export class Login extends React.Component {
   onSubmit(event) {
@@ -25,7 +26,7 @@ export class Login extends React.Component {
                 <label forhtml="password">Password</label>
                 <input type="password" name='password' id='password' />
               </div>
-              <button type='submit'>Login</button>
+              <button id='login' type='submit'>Login</button>
           </form>
         </div>
     );

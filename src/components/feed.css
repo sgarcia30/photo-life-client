@@ -17,26 +17,31 @@
   clear: both;
 }
 .entry-details {
-  width: 50%;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 22px;
+  width: 50%;
 }
 
-#date {
+.caption-date {
+  width: 50%;
+  display: inline-block;
+  float: left;
+}
+
+.date {
   color: gray;
   font-family: 'Poppins', sans-serif;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin: 0px;
   text-align: left;
 }
 
-#caption {
-  margin-top: 0px;
-  margin-bottom: 0px;
+.caption {
+  margin: 0px;
   text-align: left;
 }
 
-#delete, #edit {
+.delete, .edit {
   color: white;
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
@@ -45,10 +50,25 @@
   border-radius: 5px;
   border-style: solid;
   margin: 5px;
-  margin-bottom: 22px;
+  margin-bottom: 5px;
   padding-top: 3px;
   padding-bottom: 3px;
   padding-right: 6px;
   padding-left: 6px;
   float: right;
+}
+
+button:hover {
+	cursor: pointer;
+	background-color: #02c39a;
+	border-color: #02c39a;
+}
+
+button:focus {
+	outline: 0;
+  box-shadow: none;
+}
+
+.spacer {
+  clear: both;
 }

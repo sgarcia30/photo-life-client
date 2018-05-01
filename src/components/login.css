@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+	background: url("/images/chris-yang-557153-unsplash.jpg");
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+}
+
+body {
+  background: none;
+}
+
+.login-form {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+fieldset {
+	border: none;
+	padding: 0;
+	margin: 0;
+}
+
+.login {
+  background:rgba(91,75,73,0.6);
+	width: 320px;
+	height: 430px;
+	padding-left: 40px;
+	padding-right: 40px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+legend {
+	font-size: 40px;
+	text-align: center;
+	padding-top: 30px;
+	padding-bottom: 15px;
+	font-family: 'Poppins', sans-serif;
+	color: #e7dfc6;
+}
+
+label {
+	display: block;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	font-family: 'Poppins', sans-serif;
+	font-size: 22px;
+	color: #e7dfc6;
+}
+
+input {
+	width: 286px;
+	padding: 15px;
+	font-family: 'Poppins', sans-serif;
+	font-size: 18px;
+	border: 0px;
+}
+
+#login {
+	display: block;
+	margin-top: 25px;
+	color: #e7dfc6;
+	background-color: #05668d;
+	border-color: #05668d;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: 'Poppins', sans-serif;
+	font-size: 22px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-style: none;
+}
+
+#login:hover {
+	cursor: pointer;
+	background-color: #02c39a;
+	border-color: #02c39a;
+}
+
+#login:focus {
+	outline: 0;
+  box-shadow: none;
+}

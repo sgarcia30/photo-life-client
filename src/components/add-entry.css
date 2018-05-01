@@ -9,13 +9,11 @@
 	width: 400px;
 	height: auto;
   padding: 10px;
-  /* margin-left: auto;
-  margin-right: auto; */
 	margin-left: 12px;
 	margin-top: 50px;
 	margin-bottom: 50px;
-  border-radius: 10px;
-  border: rgba(5,102,141,0.4) solid 10px;
+  border-radius: 5px;
+  border: rgba(5,102,141,0.4) solid 5px;
 }
 
 #entry-form {
@@ -44,11 +42,22 @@ textarea {
   font-size: 16px;
   background-color: #05668d;
   border-color: #05668d;
-  border-radius: 5px;
+  border-radius: 3px;
   border-style: solid;
   margin: 5px;
   padding-top: 3px;
   padding-bottom: 3px;
   padding-right: 6px;
   padding-left: 6px;
+}
+
+#submit:hover {
+	cursor: pointer;
+	background-color: #02c39a;
+	border-color: #02c39a;
+}
+
+#submit:focus {
+	outline: 0;
+  box-shadow: none;
 }

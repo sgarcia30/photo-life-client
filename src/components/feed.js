@@ -24,8 +24,10 @@ export class Feed extends React.Component {
         <li key={index} className="entry">
           <img className="entry-image" src={`${API_BASE_URL}${entry.photo}`} alt="entry"/>
           <div className='entry-details'>
-            <p id='caption'>{entry.caption}</p>
-            <p id='date'><i>{moment(new Date(entry.date)).format('ddd MMM DD YYYY')}</i></p>
+            <div className='caption-date'>
+              <p className='caption'>{entry.caption}</p>
+              <p className='date'><i>{moment(new Date(entry.date)).format('ddd MMM DD YYYY')}</i></p>
+            </div>
             {
               entry.editable ?
               <form id="edit-form" onSubmit={(event) => this.onSubmit(event, entry._id)}>
@@ -37,10 +39,11 @@ export class Feed extends React.Component {
               </form>
               : ''
             }
-            <button id='edit' onClick={() => {
+            <button className='edit' onClick={() => {
               this.props.dispatch(editEntry(entry._id))
             }}>{entry.editable ? "Cancel" : "Edit"}</button>
-            <button id='delete' onClick={() => this.onClick(entry._id)}>Delete</button>
+            <button className='delete' onClick={() => this.onClick(entry._id)}>Delete</button>
+            <div className="spacer"></div>
           </div>
         </li>
     )})
