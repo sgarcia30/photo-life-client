@@ -17,11 +17,11 @@ export class AddEntry extends React.Component {
 
   render() {
     return (
-        <div className="entry">
+        <div className="post-area">
           <form id="entry-form" onSubmit={(event) => this.onSubmit(event)}>
             <div className="form-section">
-              <label forhtml="photo">Upload Photo</label>
-              <input id='file-upload' type="file" name="photo" required />
+              <label htmlFor="file">Upload Photo</label>
+              <input id='file-upload' type="file" name="file" required />
             </div>
             <div className="form-section">
               <label forhtml="caption">Caption</label>

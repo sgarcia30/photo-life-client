@@ -8,7 +8,6 @@ export default function HomePage() {
     return (
         <div className="home">
           <NavbarHome />
-          <h1>PhotoLife</h1>
           <AddEntry />
           <Feed />
         </div>

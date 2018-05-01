@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { getEntries, deleteEntry, editEntry, editCaption } from '../actions/entryActions.js';
 import {API_BASE_URL} from '../config.js';
 import moment from 'moment';
+import './feed.css';
 
 export class Feed extends React.Component {
   componentDidMount() {
@@ -21,24 +22,26 @@ export class Feed extends React.Component {
     const allEntries = this.props.entries.map((entry, index) => {
       return (
         <li key={index} className="entry">
-          <img src={`${API_BASE_URL}${entry.photo}`} alt="entry"/>
-          <p>{entry.caption}</p>
-          <p>{moment(new Date(entry.date)).format('dddd MMM DD YYYY')}</p>
-          {
-            entry.editable ?
-            <form id="edit-form" onSubmit={(event) => this.onSubmit(event, entry._id)}>
-              <div className="form-section">
-                <label forhtml="editCaption">Caption</label>
-                <textarea name="editCaption" rows="2"></textarea>
-              </div>
-              <button type="submit">Update</button>
-            </form>
-            : ''
-          }
-          <button onClick={() => {
-            this.props.dispatch(editEntry(entry._id))
-          }}>{entry.editable ? "Cancel" : "Edit"}</button>
-          <button onClick={() => this.onClick(entry._id)}>Delete</button>
+          <img className="entry-image" src={`${API_BASE_URL}${entry.photo}`} alt="entry"/>
+          <div className='entry-details'>
+            <p id='caption'>{entry.caption}</p>
+            <p id='date'><i>{moment(new Date(entry.date)).format('ddd MMM DD YYYY')}</i></p>
+            {
+              entry.editable ?
+              <form id="edit-form" onSubmit={(event) => this.onSubmit(event, entry._id)}>
+                <div className="form-section">
+                  <label forhtml="editCaption">Caption</label>
+                  <textarea name="editCaption" rows="2"></textarea>
+                </div>
+                <button type="submit">Update</button>
+              </form>
+              : ''
+            }
+            <button id='edit' onClick={() => {
+              this.props.dispatch(editEntry(entry._id))
+            }}>{entry.editable ? "Cancel" : "Edit"}</button>
+            <button id='delete' onClick={() => this.onClick(entry._id)}>Delete</button>
+          </div>
         </li>
     )})
     return (
