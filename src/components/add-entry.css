@@ -27,46 +27,65 @@
 }
 
 .journalOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(26, 26, 26, 0.6);
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(26, 26, 26, 0.6);
+}
 
-  .journalModal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    right: auto;
-    bottom: auto;
-    background-color: white;
-    marginRight: -50%;
-    transform: translate(-50%, -50%);
-  }
+.journalModal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  background-color: rgba(27, 153, 139, 0.8);
+  marginRight: -50%;
+  transform: translate(-50%, -50%);
+  padding: 30px;
+  border-radius: 10px;
+}
 
-.post-area #entry-form {
+.journalModal:focus{
+  outline: none;
+}
+
+.journalModal #entry-form {
 	margin-left: 20px;
 	margin-right: 20px;
 }
 
-.post-area input {
-  padding: 6px;
-  margin: 5px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 13px;
-  border: gray solid 1px;
+.journalModal #uploadLabel {
+    color: white;
+    padding: 4px;
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
 }
 
-.post-area textarea {
+.journalModal #uploadLabel:hover {
+    cursor: pointer;
+    background-color: #5b4b49;
+}
+
+.journalModal #file {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.journalModal textarea {
   display: block;
   border: none;
   border-radius: 5px;
   resize: none;
 }
 
-.post-area #submit {
+.journalModal #submit, #closeModal {
   color: white;
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
@@ -75,19 +94,36 @@
   border-radius: 3px;
   border-style: solid;
   margin: 5px;
+  margin-top: 12px;
+  margin-bottom: 0px;
   padding-top: 3px;
   padding-bottom: 3px;
   padding-right: 6px;
   padding-left: 6px;
 }
 
-.post-area #submit:hover {
-	cursor: pointer;
-	background-color: #02c39a;
-	border-color: #02c39a;
+.journalModal #closeModal {
+  width: 49.67px;
 }
 
-.post-area #submit:focus {
+.journalModal #submit:hover {
+	cursor: pointer;
+	background-color: #044862;
+	border-color: #044862;
+}
+
+.journalModal #closeModal:hover {
+	cursor: pointer;
+	background-color: #044862;
+	border-color: #044862;
+}
+
+.journalModal #submit:focus {
+	outline: 0;
+  box-shadow: none;
+}
+
+.journalModal #closeModal:focus {
 	outline: 0;
   box-shadow: none;
 }

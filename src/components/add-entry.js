@@ -48,7 +48,7 @@ export class AddEntry extends React.Component {
           >
             <form id="entry-form" onSubmit={(event) => this.onSubmit(event)}>
               <div className="form-section">
-                <label htmlFor="file">Upload Photo</label>
+                <label id='uploadLabel' htmlFor="file">+ Upload Photo</label>
                 <input id='file' type="file" name="file" required />
               </div>
               <div className="form-section">
@@ -56,8 +56,8 @@ export class AddEntry extends React.Component {
                 <textarea name="caption" rows="2"></textarea>
               </div>
               <button id='submit' type="submit">Post</button>
+              <button id='closeModal' onClick={this.closeModal}>X</button>
             </form>
-            <button onClick={this.closeModal}>X</button>
           </Modal>
         </div>
     );
