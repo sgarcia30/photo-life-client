@@ -1,10 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins');
-
-* {
-  box-sizing: border-box;
-}
-
-.entry-image {
+.feed .entry-image {
   width: 50%;
 }
 
@@ -12,36 +6,36 @@
   text-align: center;
 }
 
-.entry {
+.feed .entry {
   list-style-type: none;
   clear: both;
 }
-.entry-details {
+.feed .entry-details {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 22px;
   width: 50%;
 }
 
-.caption-date {
+.feed .caption-date {
   width: 50%;
   display: inline-block;
   float: left;
 }
 
-.date {
+.feed .date {
   color: gray;
   font-family: 'Poppins', sans-serif;
   margin: 0px;
   text-align: left;
 }
 
-.caption {
+.feed .caption {
   margin: 0px;
   text-align: left;
 }
 
-.delete, .edit {
+.feed .delete, .edit {
   color: white;
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
@@ -58,17 +52,17 @@
   float: right;
 }
 
-button:hover {
+.feed button:hover {
 	cursor: pointer;
 	background-color: #02c39a;
 	border-color: #02c39a;
 }
 
-button:focus {
+.feed button:focus {
 	outline: 0;
   box-shadow: none;
 }
 
-.spacer {
+.feed .spacer {
   clear: both;
 }

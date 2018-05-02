@@ -1,27 +1,57 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins');
-
-* {
-  box-sizing: border-box;
-}
-
 .post-area {
   background:rgba(27,153,159,0.6);
-	width: 400px;
+	width: 12.5%;
 	height: auto;
   padding: 10px;
 	margin-left: 12px;
-	margin-top: 50px;
-	margin-bottom: 50px;
+	margin-top: 25px;
   border-radius: 5px;
-  border: rgba(5,102,141,0.4) solid 5px;
 }
 
-#entry-form {
+.post-area #journal-modal {
+  background-color: rgba(27,153,159,0);
+  border: none;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  width: 100%;
+}
+
+.post-area #journal-modal:hover {
+	cursor: pointer;
+}
+
+.post-area #journal-modal:focus {
+	outline: 0;
+  box-shadow: none;
+}
+
+.journalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(26, 26, 26, 0.6);
+  }
+
+  .journalModal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    background-color: white;
+    marginRight: -50%;
+    transform: translate(-50%, -50%);
+  }
+
+.post-area #entry-form {
 	margin-left: 20px;
 	margin-right: 20px;
 }
 
-input {
+.post-area input {
   padding: 6px;
   margin: 5px;
   font-family: 'Poppins', sans-serif;
@@ -29,14 +59,14 @@ input {
   border: gray solid 1px;
 }
 
-textarea {
+.post-area textarea {
   display: block;
   border: none;
   border-radius: 5px;
   resize: none;
 }
 
-#submit {
+.post-area #submit {
   color: white;
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
@@ -51,13 +81,13 @@ textarea {
   padding-left: 6px;
 }
 
-#submit:hover {
+.post-area #submit:hover {
 	cursor: pointer;
 	background-color: #02c39a;
 	border-color: #02c39a;
 }
 
-#submit:focus {
+.post-area #submit:focus {
 	outline: 0;
   box-shadow: none;
 }

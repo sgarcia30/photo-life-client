@@ -4,7 +4,7 @@ import './nav-bar-landing.css';
 
 export default function NavbarLanding(props) {
     return (
-        <div className="nav">
+        <div className="nav-landing">
           <nav>
             <h2>PhotoLife Logo</h2>
             <ul className="nav-components">

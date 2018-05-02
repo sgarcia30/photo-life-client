@@ -2,9 +2,29 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { postEntry } from '../actions/entryActions.js';
 import FormData from 'form-data';
+import Modal from 'react-modal';
 import './add-entry.css';
 
 export class AddEntry extends React.Component {
+  constructor() {
+      super();
+
+      this.state = {
+        modalIsOpen: false
+      };
+
+      this.openModal = this.openModal.bind(this);
+      this.closeModal = this.closeModal.bind(this);
+  }
+
+  openModal() {
+    this.setState({modalIsOpen: true});
+  }
+
+  closeModal() {
+    this.setState({modalIsOpen: false});
+  }
+
   onSubmit(event) {
     event.preventDefault();
     let photo = new FormData();
@@ -18,17 +38,27 @@ export class AddEntry extends React.Component {
   render() {
     return (
         <div className="post-area">
-          <form id="entry-form" onSubmit={(event) => this.onSubmit(event)}>
-            <div className="form-section">
-              <label htmlFor="file">Upload Photo</label>
-              <input id='file-upload' type="file" name="file" required />
-            </div>
-            <div className="form-section">
-              <label forhtml="caption">Caption</label>
-              <textarea name="caption" rows="2"></textarea>
-            </div>
-            <button id='submit' type="submit">Post</button>
-          </form>
+          <button id='journal-modal' onClick={this.openModal}>Journal</button>
+          <Modal
+          isOpen={this.state.modalIsOpen}
+          onRequestClose={this.closeModal}
+          contentLabel="Journal Modal"
+          className="journalModal"
+          overlayClassName="journalOverlay"
+          >
+            <form id="entry-form" onSubmit={(event) => this.onSubmit(event)}>
+              <div className="form-section">
+                <label htmlFor="file">Upload Photo</label>
+                <input id='file' type="file" name="file" required />
+              </div>
+              <div className="form-section">
+                <label forhtml="caption">Caption</label>
+                <textarea name="caption" rows="2"></textarea>
+              </div>
+              <button id='submit' type="submit">Post</button>
+            </form>
+            <button onClick={this.closeModal}>X</button>
+          </Modal>
         </div>
     );
   }

@@ -14,21 +14,27 @@ export class Login extends React.Component {
     }
     this.props.dispatch(login(values));
   }
+
   render() {
     return (
-        <div className="login">
-          <form className='login-form' onSubmit={(event) => this.onSubmit(event)}>
-              <div>
-                <label forhtml="username">Email</label>
-                <input type="text" name='username' id='username' />
-              </div>
-              <div>
-                <label forhtml="password">Password</label>
-                <input type="password" name='password' id='password' />
-              </div>
-              <button id='login' type='submit'>Login</button>
-          </form>
+      <div className='login-wrapper'>
+        <div className="login-component">
+            <form className='login-form' onSubmit={(event) => this.onSubmit(event)}>
+              <fieldset>
+                <legend>Login</legend>
+                <div>
+                  <label forhtml="username">Email</label>
+                  <input type="text" name='username' id='username' />
+                </div>
+                <div>
+                  <label forhtml="password">Password</label>
+                  <input type="password" name='password' id='password' />
+                </div>
+                </fieldset>
+                <button id='login' type='submit'>Login</button>
+            </form>
         </div>
+      </div>
     );
   }
 }
