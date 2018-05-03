@@ -1,0 +1,29 @@
+.appDetails .background-color {
+  background: #1b998b;
+  background-size: cover;
+  height: 300px;
+  margin-bottom: 20px;
+  display: flex;
+  width: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.appDetails .card {
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+  background: #05668d;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  padding: 5px 20px;
+}
+
+.appDetails .card h2 {
+  font-size: 18px;
+}
+
+.appDetails .card p {
+  font-size: 15px;
+}

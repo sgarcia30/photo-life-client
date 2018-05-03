@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { register } from '../actions/authActions.js';
+import './registration.css';
 
 export class Registration extends React.Component {
   onSubmit(event) {
@@ -39,7 +40,7 @@ export class Registration extends React.Component {
             </div>
             <button type='submit'>Register</button>
         </form>
-        </div>
+      </div>
     );
   }
 }

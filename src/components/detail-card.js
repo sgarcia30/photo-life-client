@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import './detail-card.css';
 
 function DetailCard(props) {
   console.log(props)
@@ -11,7 +12,9 @@ function DetailCard(props) {
     ))
     return (
         <div className="appDetails">
-          {cards}
+          <div className='background-color'>
+            {cards}
+          </div>
         </div>
     );
 };
