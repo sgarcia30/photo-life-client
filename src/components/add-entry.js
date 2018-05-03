@@ -28,11 +28,12 @@ export class AddEntry extends React.Component {
   onSubmit(event) {
     event.preventDefault();
     let photo = new FormData();
-    photo.append('file', event.target.photo.files[0]);
-    const caption = event.target.caption.value;
-    this.props.dispatch(postEntry(photo, caption));
-    event.target.photo.value = '';
+    photo.append('file', event.target.file.files[0]);
+    photo.append('caption', event.target.caption.value);
+    this.props.dispatch(postEntry(photo));
+    event.target.file.value = '';
     event.target.caption.value = '';
+    this.closeModal();
   }
 
   render() {
@@ -45,6 +46,7 @@ export class AddEntry extends React.Component {
           contentLabel="Journal Modal"
           className="journalModal"
           overlayClassName="journalOverlay"
+          ariaHideApp={false}
           >
             <form id="entry-form" onSubmit={(event) => this.onSubmit(event)}>
               <div className="form-section">

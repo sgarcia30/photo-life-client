@@ -27,3 +27,20 @@
 .appDetails .card p {
   font-size: 15px;
 }
+
+@media only screen and (max-width: 745px) {
+  .appDetails .card {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .appDetails .background-color {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: auto;
+  }
+}

@@ -10,7 +10,7 @@ export default function NavbarLanding(props) {
             <h2>PhotoLife</h2>
             <ul className="nav-components">
               <li><Link to='/login'><button id='logout'>Login</button></Link></li>
-              <li><button id='register'>Register</button></li>
+              <li><a href='#register-form-div'><button id='register'>Register</button></a></li>
             </ul>
           </nav>
         </div>

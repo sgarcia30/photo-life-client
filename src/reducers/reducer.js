@@ -1,9 +1,6 @@
 import * as actions from '../actions/entryActions.js';
 
 const initialState = {
-  email: "jdoe@gmail.com",
-  firstName: 'Jane',
-  lastName: 'Doe',
   entries: [{
     img: "img-link",
     caption: "this photo is awesome"

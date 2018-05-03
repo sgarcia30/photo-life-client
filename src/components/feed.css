@@ -96,3 +96,13 @@
 .feed .spacer {
   clear: both;
 }
+
+@media only screen and (max-width: 700px) {
+  .feed .delete, .edit {
+    display: block;
+  }
+
+  .feed .caption-date {
+    display: block;
+  }
+}

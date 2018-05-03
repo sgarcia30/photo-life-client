@@ -37,3 +37,15 @@
   padding-bottom: 22px;
   text-align: center;
 }
+
+@media only screen and (max-width: 545px) {
+  .appIntro h1 {
+    font-size: 12vw;
+    text-align: center;
+  }
+
+  .appIntro .app-slogan {
+    font-size: 6vw;
+    text-align: center;
+  }
+}

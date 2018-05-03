@@ -20,7 +20,7 @@ export class Registration extends React.Component {
   }
   render() {
     return (
-        <div className="registration">
+        <div id='register-form-div' className="registration">
           <form className='registration-form' onSubmit={event => this.onSubmit(event)}>
             <div>
               <label forhtml="first-name">First Name</label>

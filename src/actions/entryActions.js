@@ -18,10 +18,10 @@ export const searchPosts = searchVal => ({
     searchVal
 });
 
-export const postEntry = (photo, caption) => dispatch => {
+export const postEntry = (photo) => dispatch => {
   const authToken = localStorage.getItem('authToken');
   const userId = localStorage.getItem('userId');
-    fetch(`${API_BASE_URL}/api/entries/${userId}/${caption}`, {
+    fetch(`${API_BASE_URL}/api/entries/${userId}`, {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${authToken}`
