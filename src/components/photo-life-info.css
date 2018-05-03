@@ -1,0 +1,39 @@
+.appIntro .landing-background {
+  height: 500px;
+  background: url('/images/jess-watters-548846-unsplash.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  z-index: 10;
+  margin-top: 0px;
+  padding-top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.appIntro .transparency-block {
+    margin-right: auto;
+    margin-left: auto;
+    background: rgba(91, 75, 73,.7);
+    border-radius: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.appIntro h1, .app-slogan {
+  color: white;
+}
+
+.appIntro h1 {
+  margin: 0px;
+  font-size: 95px;
+}
+
+.appIntro .app-slogan {
+  font-size: 32px;
+  margin: 0px;
+  padding-bottom: 22px;
+  text-align: center;
+}

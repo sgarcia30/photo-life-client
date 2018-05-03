@@ -28,21 +28,24 @@ export class Feed extends React.Component {
               <p className='caption'>{entry.caption}</p>
               <p className='date'><i>{moment(new Date(entry.date)).format('ddd MMM DD YYYY')}</i></p>
             </div>
-            {
-              entry.editable ?
-              <form id="edit-form" onSubmit={(event) => this.onSubmit(event, entry._id)}>
-                <div className="form-section">
-                  <label forhtml="editCaption">Caption</label>
-                  <textarea name="editCaption" rows="2"></textarea>
-                </div>
-                <button type="submit">Update</button>
-              </form>
-              : ''
-            }
             <button className='edit' onClick={() => {
               this.props.dispatch(editEntry(entry._id))
             }}>{entry.editable ? "Cancel" : "Edit"}</button>
             <button className='delete' onClick={() => this.onClick(entry._id)}>Delete</button>
+            {
+              entry.editable ?
+
+              <form id="edit-form" onSubmit={(event) => this.onSubmit(event, entry._id)}>
+                <br></br>
+                <div id='edit-form-section' className="form-section">
+                  <br></br>
+                  <label id='editCaption' forhtml="editCaption">Edit Caption</label>
+                  <textarea name="editCaption" rows="2"></textarea>
+                  <button id='updateCaption' type="submit">Update</button>
+                </div>
+              </form>
+              : ''
+            }
             <div className="spacer"></div>
           </div>
         </li>

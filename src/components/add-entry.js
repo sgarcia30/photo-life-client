@@ -52,11 +52,11 @@ export class AddEntry extends React.Component {
                 <input id='file' type="file" name="file" required />
               </div>
               <div className="form-section">
-                <label forhtml="caption">Caption</label>
+                <label id='captionlabel' forhtml="caption">Caption</label>
                 <textarea name="caption" rows="2"></textarea>
               </div>
               <button id='submit' type="submit">Post</button>
-              <button id='closeModal' onClick={this.closeModal}>X</button>
+              <button id='closeModal' onClick={this.closeModal}>Cancel</button>
             </form>
           </Modal>
         </div>

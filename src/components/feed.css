@@ -35,7 +35,7 @@
   text-align: left;
 }
 
-.feed .delete, .edit {
+.feed .delete, .edit, #updateCaption {
   color: white;
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
@@ -58,9 +58,39 @@
 	border-color: #02c39a;
 }
 
+.feed #updateCaption:hover {
+	cursor: pointer;
+	background-color: #02c39a;
+	border-color: #02c39a;
+}
+
 .feed button:focus {
 	outline: 0;
   box-shadow: none;
+}
+
+.feed #edit-form-section{
+  width: 25%;
+  margin-left: 75%;
+}
+
+.feed #editCaption {
+  float: left;
+  margin-bottom: 2px;
+}
+
+.feed textarea {
+  display: block;
+  border: none;
+  border-radius: 5px;
+  resize: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.feed #updateCaption {
+  float: left;
+  margin: 10px;
 }
 
 .feed .spacer {

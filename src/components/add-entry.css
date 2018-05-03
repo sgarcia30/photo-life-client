@@ -15,10 +15,12 @@
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
   width: 100%;
+  border-radius: 5px;
 }
 
 .post-area #journal-modal:hover {
 	cursor: pointer;
+  background-color: #5b4b49;
 }
 
 .post-area #journal-modal:focus {
@@ -61,7 +63,10 @@
     color: white;
     padding: 4px;
     display: inline-block;
-    font-family: 'Poppins', sans-serif;
+}
+
+.journalModal #captionlabel {
+  color: white;
 }
 
 .journalModal #uploadLabel:hover {
@@ -100,10 +105,6 @@
   padding-bottom: 3px;
   padding-right: 6px;
   padding-left: 6px;
-}
-
-.journalModal #closeModal {
-  width: 49.67px;
 }
 
 .journalModal #submit:hover {

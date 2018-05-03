@@ -14,11 +14,7 @@ const initialState = {
   },
   {
     title: "Categorize your journal entries",
-    cardInfo: "Each photo entry can be captioned and categorized for searchability. PhotoLife allows users to search and view their entries by date or by category."
-  },
-  {
-    title: "Share your entries",
-    cardInfo: "Share each of your entries with a select group of friends or family or only share specific entries. PhotoLife is customizeable for sharing to ensure your entries are only shared as desired."
+    cardInfo: "Each photo entry can be captioned for searchability. PhotoLife allows users to search and view their entries by caption."
   }]
 };
 
