@@ -20,6 +20,10 @@
   color: white;
 }
 
+.nav-landing .nav-stuff {
+  display: flex;
+}
+
 .nav-landing .nav-components {
   display: flex!important;
   justify-content: flex-end;

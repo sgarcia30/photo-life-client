@@ -5,26 +5,29 @@ import FormData from 'form-data';
 import Modal from 'react-modal';
 import './add-entry.css';
 
+//AddEntry component
 export class AddEntry extends React.Component {
+  // Constructor and props set-up to use state to user 'react-modal'
   constructor() {
       super();
-
       this.state = {
         modalIsOpen: false
       };
-
       this.openModal = this.openModal.bind(this);
       this.closeModal = this.closeModal.bind(this);
   }
 
+// function to open the modal
   openModal() {
     this.setState({modalIsOpen: true});
   }
 
+// function to close the modal
   closeModal() {
     this.setState({modalIsOpen: false});
   }
 
+// on submit function to dispatch async action to post journal entry
   onSubmit(event) {
     event.preventDefault();
     let photo = new FormData();
@@ -36,6 +39,7 @@ export class AddEntry extends React.Component {
     this.closeModal();
   }
 
+// Render AddEntry component
   render() {
     return (
         <div className="post-area">
@@ -66,4 +70,5 @@ export class AddEntry extends React.Component {
   }
 }
 
+// Connect AddEntry component to the store
 export default connect()(AddEntry);

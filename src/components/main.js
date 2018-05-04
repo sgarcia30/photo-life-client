@@ -4,7 +4,9 @@ import LandingPage from './landing-page.js'
 import Login from './login.js';
 import HomePage from './home-page.js';
 
+// Main component
 export default function Main() {
+  // Routes the LandingPage, Login, and HomePage components
     return (
       <Router>
         <div className="main">

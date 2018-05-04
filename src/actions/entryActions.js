@@ -1,23 +1,27 @@
 import {API_BASE_URL} from '../config';
 
+// Sync action to set state of the entries
 export const GET_PHOTO_SUCCESS = 'GET_PHOTO_SUCCESS';
 export const getPhotoSuccess = entries => ({
     type: GET_PHOTO_SUCCESS,
     entries
 });
 
+// Sync action to set state of the entry ID
 export const EDIT_ENTRY = 'EDIT_ENTRY';
 export const editEntry = entryId => ({
     type: EDIT_ENTRY,
     entryId
 });
 
+// Sync action to set state of the search value
 export const SEARCH_POSTS = 'SEARCH_POSTS';
 export const searchPosts = searchVal => ({
     type: SEARCH_POSTS,
     searchVal
 });
 
+// Asyn post action for the user to make a journal entry
 export const postEntry = (photo) => dispatch => {
   const authToken = localStorage.getItem('authToken');
   const userId = localStorage.getItem('userId');
@@ -39,6 +43,7 @@ export const postEntry = (photo) => dispatch => {
         });
 };
 
+// Async put action to update a caption for an entry
 export const editCaption = (updatedCaption, postId) => dispatch => {
   const authToken = localStorage.getItem('authToken');
   const userId = localStorage.getItem('userId');
@@ -64,6 +69,7 @@ export const editCaption = (updatedCaption, postId) => dispatch => {
         });
 };
 
+// Async get action to get a users entries
 export const getEntries = () => dispatch => {
   const authToken = localStorage.getItem('authToken');
   const userId = localStorage.getItem('userId');
@@ -87,6 +93,7 @@ export const getEntries = () => dispatch => {
         .catch(err => console.log(err))
 };
 
+// Async delete action to delete a specific entry
 export const deleteEntry = (postId) => dispatch => {
   const authToken = localStorage.getItem('authToken');
   const userId = localStorage.getItem('userId');

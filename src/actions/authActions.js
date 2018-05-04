@@ -1,5 +1,6 @@
 import {API_BASE_URL} from '../config';
 
+// Async post action to register a user
 export const register = (values) => dispatch => {
     fetch(`${API_BASE_URL}/api/auth/register`, {
       method: 'POST',
@@ -25,6 +26,7 @@ export const register = (values) => dispatch => {
         });
 };
 
+// Async post action to login a user
 export const login = (values) => dispatch => {
     fetch(`${API_BASE_URL}/api/auth/login`, {
       method: 'POST',

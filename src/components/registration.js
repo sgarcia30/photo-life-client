@@ -3,7 +3,10 @@ import { connect } from 'react-redux';
 import { register } from '../actions/authActions.js';
 import './registration.css';
 
+// Registration component
 export class Registration extends React.Component {
+  // onSubmit function to dispatch the 'register' action
+  // to register a new user
   onSubmit(event) {
     event.preventDefault();
     const firstName = event.target.firstName.value;
@@ -18,6 +21,7 @@ export class Registration extends React.Component {
     }
     this.props.dispatch(register(values));
   }
+  // Renders the Registration componnet form
   render() {
     return (
         <div id='register-form-div' className="registration">
@@ -45,4 +49,5 @@ export class Registration extends React.Component {
   }
 }
 
+// Connect the Registration component to the store
 export default connect()(Registration);

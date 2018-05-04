@@ -3,7 +3,10 @@ import { connect } from 'react-redux';
 import { login } from '../actions/authActions.js';
 import './login.css';
 
+// Login component
 export class Login extends React.Component {
+  // onSubmit functions that dispatches the 'login' action
+  // to log a user in
   onSubmit(event) {
     event.preventDefault();
     const email = event.target.username.value;
@@ -15,6 +18,7 @@ export class Login extends React.Component {
     this.props.dispatch(login(values));
   }
 
+// Renders the Login component
   render() {
     return (
       <div className='login-wrapper'>
@@ -39,4 +43,5 @@ export class Login extends React.Component {
   }
 }
 
+// Connect the Login component to the store
 export default connect()(Login);

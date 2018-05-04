@@ -2,7 +2,9 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import './nav-bar-landing.css';
 
+// NavbarLanding component
 export default function NavbarLanding(props) {
+  // Renders the NavbarLanding component
     return (
         <div className="nav-landing">
           <nav>

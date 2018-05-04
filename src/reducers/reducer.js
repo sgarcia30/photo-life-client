@@ -1,5 +1,6 @@
 import * as actions from '../actions/entryActions.js';
 
+// Set up the initial state for the app
 const initialState = {
   entries: [{
     img: "img-link",
@@ -15,7 +16,10 @@ const initialState = {
   }]
 };
 
+// Reducer function
 export const Reducer = (state = initialState, action) => {
+  // GET_PHOTO_SUCCESS action that gets the users entries
+  // and sorts them by date
   if (action.type === actions.GET_PHOTO_SUCCESS) {
     const sortedEntries = action.entries.sort((a,b) => {
     if(a.date < b.date) {
@@ -30,6 +34,7 @@ export const Reducer = (state = initialState, action) => {
       entries: sortedEntries
     })
   }
+  // EDIT_ENTRY action that updates an entry's caption
   else if (action.type === actions.EDIT_ENTRY) {
     const editedEntries = state.entries.map(entry => {
       if(entry._id === action.entryId) {
@@ -46,6 +51,7 @@ export const Reducer = (state = initialState, action) => {
       entries: editedEntries
     })
   }
+  // SEARCH_POSTS action that searches the user's entry captions
   else if (action.type === actions.SEARCH_POSTS) {
     const searchVal = action.searchVal.toLowerCase();
     let searchMatches = state.entries.filter(entry => {
@@ -58,6 +64,3 @@ export const Reducer = (state = initialState, action) => {
   }
   return state;
 }
-
-// const searchLength = searchVal.length;
-// let shortCaption = lowCaseCaption.substring(0, Math.min(lowCaseCaption.length, searchLength));
