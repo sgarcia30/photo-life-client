@@ -25,7 +25,7 @@ export class NavbarHome extends React.Component {
             <div className='nav-stuff'>
               <ul className="nav-components">
                 <form id="searchForm">
-                  <li><input type='text' placeholder='Search Entries' ref={input => this.input = input} onChange={() => this.onChange()}/></li>
+                  <li><input id='search-input' type='text' placeholder='Search Entries' ref={input => this.input = input} onChange={() => this.onChange()}/></li>
                 </form>
                 <li onClick={() => {
                   localStorage.clear();

@@ -20,6 +20,10 @@
   color: white;
 }
 
+.nav .nav-stuff {
+  display: flex;
+}
+
 .nav .nav-components {
   display: flex!important;
   justify-content: flex-end;
@@ -78,7 +82,6 @@
     padding-top: 1px;
     padding-bottom: 1px;
     margin: 1px;
-    /* display: block; */
   }
 
   .nav h2 {
@@ -92,7 +95,28 @@
   .nav input {
     font-size: 2.5vw;
     padding: 3px;
-    /* display: block; */
     width: 28vw;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .nav #search-input, .nav #logout {
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .nav .nav-stuff {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav .nav-components {
+    display: block!important;
+  }
+
+  .nav input {
+    width: 22vw;
   }
 }
