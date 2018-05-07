@@ -15,12 +15,12 @@
 .login-component .login-form {
 	margin-left: 15px;
 	margin-right: 15px;
+	padding-bottom: 20px;
 }
 
 .login-component {
   background:rgba(91,75,73,0.6);
 	width: 320px;
-	height: 430px;
 	padding-left: 40px;
 	padding-right: 40px;
 	margin-left: auto;
@@ -42,6 +42,10 @@
 	padding-top: 30px;
 	padding-bottom: 15px;
 	font-family: 'Poppins', sans-serif;
+	color: #e7dfc6;
+}
+
+.login-component .demo {
 	color: #e7dfc6;
 }
 
@@ -95,6 +99,10 @@
 @media only screen and (max-width: 640px) {
 	.login-component legend {
 		font-size: 6vw;
+	}
+
+	.login-component .demo {
+		font-size: 2.6vw;
 	}
 
 	.login-component label {

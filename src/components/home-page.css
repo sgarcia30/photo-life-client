@@ -7,4 +7,5 @@
 body {
   background: url('../images/brickwall/brickwall.png');
   font-family: 'Poppins', sans-serif;
+  	/* overflow-y: scroll; */
 }

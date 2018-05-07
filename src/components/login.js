@@ -26,6 +26,8 @@ export class Login extends React.Component {
             <form className='login-form' onSubmit={(event) => this.onSubmit(event)}>
               <fieldset>
                 <legend>Login</legend>
+                <span className='demo'>Demo User</span>
+                <span className='demo'>Email: jdoe@gmail.com, Password: 123456789</span>
                 <div>
                   <label forhtml="username">Email</label>
                   <input type="text" name='username' id='username' />
