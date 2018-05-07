@@ -1,11 +1,12 @@
 import * as actions from '../actions/entryActions.js';
+import moment from 'moment';
 
 // Set up the initial state for the app
 const initialState = {
   entries: [{
-    img: "/public/images/welcomePhotoLife.png",
+    photo: "/public/images/welcomePhotoLife.png",
     caption: "what do your pictures say?",
-    date: `{moment().format('ddd MMM DD YYYY')}`
+    date: moment().format('ddd MMM DD YYYY')
   }],
   card: [{
     title: "Capture your life in photos",

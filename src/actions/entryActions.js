@@ -88,7 +88,9 @@ export const getEntries = () => dispatch => {
             return res.json();
         })
         .then(entries => {
-          dispatch(getPhotoSuccess(entries))
+          if (entries.length > 0) {
+            dispatch(getPhotoSuccess(entries))
+          }
         })
         .catch(err => console.log(err))
 };
