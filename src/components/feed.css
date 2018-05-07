@@ -72,8 +72,7 @@
   box-shadow: none;
 }
 
-.feed #edit-form-section{
-  width: 25%;
+.feed #edit-form-section {
   margin-left: 75%;
 }
 
@@ -87,8 +86,6 @@
   border: none;
   border-radius: 5px;
   resize: none;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .feed #updateCaption {
@@ -98,6 +95,12 @@
 
 .feed .spacer {
   clear: both;
+}
+
+@media only screen and (max-width: 1240px) {
+  .feed #edit-form-section{
+    float: right;
+  }
 }
 
 @media only screen and (max-width: 700px) {
@@ -114,6 +117,33 @@
   }
 
   .feed .caption, .date {
+    font-size: 2.6vw;
+  }
+
+  .feed #edit-form-section {
+    width: 100%;
+    margin-left: 0px;
+    padding-top: 0px;
+    margin-top: 0px;
+    float: none;
+  }
+
+  .feed #editCaption {
+    float: none;
+    font-size: 2.8vw;
+  }
+
+  .feed textarea {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+  .feed #updateCaption {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 5px;
     font-size: 2.6vw;
   }
 }

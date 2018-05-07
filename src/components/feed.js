@@ -45,7 +45,6 @@ export class Feed extends React.Component {
             </div>
             {
               entry.editable ?
-
               <form id="edit-form" onSubmit={(event) => this.onSubmit(event, entry._id)}>
                 <br></br>
                 <div id='edit-form-section' className="form-section">

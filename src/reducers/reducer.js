@@ -3,8 +3,9 @@ import * as actions from '../actions/entryActions.js';
 // Set up the initial state for the app
 const initialState = {
   entries: [{
-    img: "img-link",
-    caption: "this photo is awesome"
+    img: "/public/images/welcomePhotoLife.png",
+    caption: "what do your pictures say?",
+    date: `{moment().format('ddd MMM DD YYYY')}`
   }],
   card: [{
     title: "Capture your life in photos",
