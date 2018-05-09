@@ -1,8 +1,7 @@
 import * as actions from '../actions/authActions.js';
 
 const initialState = {
-  failureMessage: '',
-  modalIsOpen: false
+  failureMessage: ''
 }
 
 export const authReducer = (state = initialState, action) => {

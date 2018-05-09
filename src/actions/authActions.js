@@ -57,6 +57,7 @@ export const login = (values) => dispatch => {
           window.location = '/home';
         })
         .catch(err => {
+          console.log(err)
           dispatch(loginFailure());
         })
 };

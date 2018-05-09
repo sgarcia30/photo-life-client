@@ -16,6 +16,8 @@ export class Login extends React.Component {
       password
     }
     this.props.dispatch(login(values));
+    event.target.username.value = '';
+    event.target.password.value = '';
   }
 
 // Renders the Login component
