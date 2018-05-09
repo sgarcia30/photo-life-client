@@ -72,7 +72,7 @@ export class Feed extends React.Component {
 
 // Set up mapStateToProps for entries
 const mapStateToProps = state => ({
-  entries: state.entries,
+  entries: state.Reducer.entries
 });
 
 // Connect the Feed component to the store

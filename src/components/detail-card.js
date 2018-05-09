@@ -23,7 +23,7 @@ function DetailCard(props) {
 
 //Set up mapStateToProps for card
 const mapStateToProps = state => ({
-  card: state.card
+  card: state.Reducer.card
 });
 
 // Connect DetailCard to the store
