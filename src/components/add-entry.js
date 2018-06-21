@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { postEntry } from '../actions/entryActions.js';
 import FormData from 'form-data';
 import Modal from 'react-modal';
+import image-data-uri from 'image-data-uri';
 import './add-entry.css';
 
 //AddEntry component
@@ -31,7 +32,7 @@ export class AddEntry extends React.Component {
   onSubmit(event) {
     event.preventDefault();
     let photo = new FormData();
-    photo.append('file', event.target.file.files[0]);
+    photo.append('file', imageDataURI.encodeFromFile(event.target.file.files[0]));
     photo.append('caption', event.target.caption.value);
     this.props.dispatch(postEntry(photo));
     event.target.file.value = '';
