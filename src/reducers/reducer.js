@@ -1,10 +1,11 @@
 import * as actions from '../actions/entryActions.js';
+import API_BASE_URL from '../config.js';
 import moment from 'moment';
 
 // Set up the initial state for the app
 const initialState = {
   entries: [{
-    photo: "/welcomePhotoLife.png",
+    photo: `${API_BASE_URL}/public/images/welcomePhotoLife.png`,
     caption: "what do your pictures say?",
     date: moment().format('ddd MMM DD YYYY')
   }],
