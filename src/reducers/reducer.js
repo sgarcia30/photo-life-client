@@ -1,5 +1,5 @@
 import * as actions from '../actions/entryActions.js';
-import API_BASE_URL from '../config.js';
+import {API_BASE_URL} from '../config.js';
 import moment from 'moment';
 
 // Set up the initial state for the app
