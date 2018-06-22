@@ -41,10 +41,10 @@ export class AddEntry extends React.Component {
 createDataURI(file, caption) {
     const  reader = new FileReader();
 
-    if(file.size > 500000) {
-      alert('File Size must be less than .5 megabytes');
-      return false;
-    } // eslint-disable-line no-alert
+    // if(file.size > 500000) {
+    //   alert('File Size must be less than .5 megabytes');
+    //   return false;
+    // } // eslint-disable-line no-alert
 
     reader.addEventListener('load', () => {
       console.log(reader.result, 'reader.result');
