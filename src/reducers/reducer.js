@@ -4,7 +4,7 @@ import moment from 'moment';
 // Set up the initial state for the app
 const initialState = {
   entries: [{
-    photo: "/public/images/welcomePhotoLife.png",
+    photo: "/welcomePhotoLife.png",
     caption: "what do your pictures say?",
     date: moment().format('ddd MMM DD YYYY')
   }],
