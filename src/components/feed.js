@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { getEntries, deleteEntry, editEntry, editCaption } from '../actions/entryActions.js';
-import {API_BASE_URL} from '../config.js';
 import moment from 'moment';
 import './feed.css';
 
