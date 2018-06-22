@@ -1,5 +1,6 @@
 import {Reducer} from './reducer.js';
 import {getPhotoSuccess, editEntry, searchPosts} from '../actions/entryActions.js';
+import API_BASE_URL from '../config.js';
 import moment from 'moment';
 
 describe('authReducer', () => {
