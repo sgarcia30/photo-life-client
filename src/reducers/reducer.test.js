@@ -18,7 +18,7 @@ describe('authReducer', () => {
         const state = Reducer(undefined, {type: '__UNKNOWN'});
         expect(state).toEqual({
           entries: [{
-            photo: "/public/images/welcomePhotoLife.png",
+            photo: "/welcomePhotoLife.png",
             caption: "what do your pictures say?",
             date: moment().format('ddd MMM DD YYYY')
           }],
