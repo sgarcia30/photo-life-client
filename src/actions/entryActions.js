@@ -25,6 +25,7 @@ export const searchPosts = searchVal => ({
 export const postEntry = (photo) => dispatch => {
   const authToken = localStorage.getItem('authToken');
   const userId = localStorage.getItem('userId');
+  console.log('is this happening?');
     fetch(`${API_BASE_URL}/api/entries/${userId}`, {
       method: 'POST',
       headers: {
@@ -34,11 +35,13 @@ export const postEntry = (photo) => dispatch => {
     })
         .then(res => {
             if (!res.ok) {
-                return Promise.reject(res.statusText);
+              console.log('uh oh');
+              return Promise.reject(res.statusText);
             }
             return res.json();
         })
         .then(response => {
+          console.log('what about this?');
           dispatch(getPhotoSuccess(response.entries));
         });
 };

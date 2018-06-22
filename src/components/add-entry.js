@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { postEntry } from '../actions/entryActions.js';
 import FormData from 'form-data';
 import Modal from 'react-modal';
-import image-data-uri from 'image-data-uri';
+// import {ImageDataURI} from 'image-data-uri';
 import './add-entry.css';
 
 //AddEntry component
@@ -16,6 +16,7 @@ export class AddEntry extends React.Component {
       };
       this.openModal = this.openModal.bind(this);
       this.closeModal = this.closeModal.bind(this);
+      this.createDataURI = this.createDataURI.bind(this);
   }
 
 // function to open the modal
@@ -31,14 +32,32 @@ export class AddEntry extends React.Component {
 // on submit function to dispatch async action to post journal entry
   onSubmit(event) {
     event.preventDefault();
-    let photo = new FormData();
-    photo.append('file', imageDataURI.encodeFromFile(event.target.file.files[0]));
-    photo.append('caption', event.target.caption.value);
-    this.props.dispatch(postEntry(photo));
+    this.createDataURI(event.target.file.files[0], event.target.caption.value);
     event.target.file.value = '';
     event.target.caption.value = '';
     this.closeModal();
   }
+
+createDataURI(file, caption) {
+    const  reader = new FileReader();
+
+    if(file.size > 500000) {
+      alert('File Size must be less than .5 megabytes');
+      return false;
+    } // eslint-disable-line no-alert
+
+    reader.addEventListener('load', () => {
+      console.log(reader.result, 'reader.result');
+      let photo = new FormData();
+      photo.append('file', reader.result);
+      photo.append('caption', caption);
+      this.props.dispatch(postEntry(photo));
+    }, false);
+
+    if(file) {
+      reader.readAsDataURL(file);
+    }
+};
 
 // Render AddEntry component
   render() {

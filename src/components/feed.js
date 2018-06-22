@@ -31,7 +31,7 @@ export class Feed extends React.Component {
     const allEntries = this.props.entries.map((entry, index) => {
       return (
         <li key={index} className="entry">
-          <img className="entry-image" src={`${API_BASE_URL}${entry.photo}`} alt="entry"/>
+          <img className="entry-image" src={`${entry.photo}`} alt="entry"/>
           <div className='entry-details'>
             <div className='caption-date'>
               <p className='caption'>{entry.caption}</p>

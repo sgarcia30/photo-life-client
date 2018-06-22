@@ -6,7 +6,7 @@ describe('loginFailure', () => {
     const action = loginFailure();
     expect(action.type).toEqual(LOGIN_FAILURE);
   });
-});
+}); 
 
 // describe('login', () => {
 //     it.only('Should dispatch loginFailure', () => {

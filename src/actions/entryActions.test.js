@@ -8,7 +8,7 @@ describe('getPhotoSuccess', () => {
         expect(action.type).toEqual(GET_PHOTO_SUCCESS);
         expect(action.entries).toEqual(entries);
     });
-});
+}); 
 
 describe('editEntry', () => {
     it('Should return the action', () => {
