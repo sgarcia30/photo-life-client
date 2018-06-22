@@ -39,33 +39,33 @@ describe('authReducer', () => {
         expect(state).toBe(currentState);
     });
 
-    describe('getPhotoSuccess', () => {
-        it('Should set get entries from state', () => {
-            let state;
-            state = Reducer(state, getPhotoSuccess(entries1));
-            expect(state).toEqual({
-                // not sure what to put in here
-            });
-        });
-    });
+    // describe('getPhotoSuccess', () => {
+    //     it('Should set get entries from state', () => {
+    //         let state;
+    //         state = Reducer(state, getPhotoSuccess(entries1));
+    //         expect(state).toEqual({
+    //             // not sure what to put in here
+    //         });
+    //     });
+    // });
 
-    describe('editEntry', () => {
-        it('Should edit a caption', () => {
-            let state;
-            state = Reducer(state, getPhotoSuccess(entries1));
-            expect(state).toEqual({
-                // not sure what to put in here
-            });
-        });
-    });
+    // describe('editEntry', () => {
+    //     it('Should edit a caption', () => {
+    //         let state;
+    //         state = Reducer(state, getPhotoSuccess(entries1));
+    //         expect(state).toEqual({
+    //             // not sure what to put in here
+    //         });
+    //     });
+    // });
 
-    describe('searchPosts', () => {
-        it('Should search entries', () => {
-            let state;
-            state = Reducer(state, getPhotoSuccess(entries1));
-            expect(state).toEqual({
-                // not sure what to put in here
-            });
-        });
-    });
-}); 
+    // describe('searchPosts', () => {
+    //     it('Should search entries', () => {
+    //         let state;
+    //         state = Reducer(state, getPhotoSuccess(entries1));
+    //         expect(state).toEqual({
+    //             // not sure what to put in here
+    //         });
+    //     });
+    // });
+});

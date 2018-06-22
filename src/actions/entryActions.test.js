@@ -8,7 +8,7 @@ describe('getPhotoSuccess', () => {
         expect(action.type).toEqual(GET_PHOTO_SUCCESS);
         expect(action.entries).toEqual(entries);
     });
-}); 
+});
 
 describe('editEntry', () => {
     it('Should return the action', () => {
@@ -26,7 +26,7 @@ describe('searchPosts', () => {
         expect(action.type).toEqual(SEARCH_POSTS);
         expect(action.searchVal).toEqual(searchVal);
     });
-});
+}); 
 
 // describe('postEntry', () => {
 //     it('Should dispatch getPhotoSuccess', () => {
